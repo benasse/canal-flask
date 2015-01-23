@@ -1,0 +1,13 @@
+[Unit]
+Description=Subsonic media server
+After=docker.service
+Requires=docker.service
+ 
+[Service]
+TimeoutStartSec=0
+
+#ExecStartPre=-/usr/bin/docker kill canal-flask
+#ExecStartPre=-/usr/bin/docker rm canal-flask
+#ExecStartPre=-/usr/bin/docker pull benasse/canal-flask
+ExecStart=/usr/bin/docker run --rm --name canal-flask -e VIRTUAL_HOST=feed.cicogna.fr -e SSL_FILENAME=feed.cicogna.fr -e VIRTUAL_PORT=5000 canal-flask
+ExecStop=/usr/bin/docker stop canal-flask
