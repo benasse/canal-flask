@@ -92,7 +92,7 @@ def gen_lpj_feed():
 @app.route('/int-sport-s9.atom')
 def gen_int_sport_s9_feed():
     id_emission = '177'
-    feed_param = { 'title' : 'Interieur Sport Saison 9' , 'subtitle' : 'Retrouvez tous les docs de la saison 9 d\'Interieur Sport', 'url_feed' : 'http://feed.cicogna.fr/int-sport-s9.atom', 'url_lecteur' : 'http://www.canalplus.fr/c-divertissement/c-le-petit-journal/pid6515-le-petit-journal.html?vid=' }
+    feed_param = { 'title' : 'Interieur Sport Saison 9' , 'subtitle' : 'Retrouvez tous les docs de la saison 9 d\'Interieur Sport', 'url_feed' : 'http://feed.cicogna.fr/int-sport-s9.atom', 'url_lecteur' : 'http://www.canalplus.fr/c-sport/pid2708-c-interieur-sport.html?vid=' }
 
     all_video_id = get_all_video_id(id_emission)
     return add_to_atom(feed_param,all_video_id)
